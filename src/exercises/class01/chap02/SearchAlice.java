@@ -1,4 +1,4 @@
-package exercises;
+package exercises.class01.chap02;
 import java.util.Locale;
 import java.util.Scanner;
 
