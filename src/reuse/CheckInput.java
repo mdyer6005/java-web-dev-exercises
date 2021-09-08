@@ -1,4 +1,4 @@
-package studios.class01;
+package reuse;
 
 public class CheckInput {
     public static boolean isValidDouble(String inputString) {
@@ -14,5 +14,12 @@ public class CheckInput {
             System.out.println("Input String cannot be parsed to Double.");
         }
         return false;
+    }
+
+    public static boolean isValidNonEmptyString(String inputString) {
+        if (inputString == null || inputString.equals("") || !(inputString.length() >= 1) ) {
+            return false;
+        }
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package studios.class02;
+package reuse;
 
 public class ManipulateStrings {
     public static String removeNonAlphabetic(String stringToManipulate) {

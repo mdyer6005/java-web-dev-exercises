@@ -1,5 +1,5 @@
 package studios.class02;
-import static studios.class02.ManipulateStrings.removeNonAlphabetic;
+import static reuse.ManipulateStrings.removeNonAlphabetic;
 
 public class ConvertTypes {
     public static char[] convertToCharactersMinusPunctuation(String stringToConvert) {
