@@ -5,7 +5,7 @@ public class GetInput {
     static Scanner input = new Scanner(System.in);
 
     public static String getString(String promptMessage) {
-        System.out.println(promptMessage);
+        System.out.print(promptMessage);
         return input.nextLine();
     }
 
