@@ -1,4 +1,5 @@
 package reuse;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class GetInput {
@@ -18,7 +19,31 @@ public class GetInput {
         } catch (NumberFormatException e) {
             System.out.println("Input String cannot be parsed to Double.");
         }
-        return null;
+        throw new NumberFormatException(String.format("Could not convert %s to Double", userAnswer));
+    }
+
+    public static Integer getInteger(String promptMessage) {
+        String userAnswer = getString(promptMessage);
+        Integer convertedToInteger;
+        try {
+            convertedToInteger = Integer.parseInt(userAnswer);
+            return convertedToInteger;
+        } catch (NumberFormatException e) {
+            System.out.println("Input String cannot be parsed to Integer.");
+        }
+        throw new NumberFormatException(String.format("Could not convert %s to Integer", userAnswer));
+    }
+
+    public static int getInt(String promptMessage) {
+        String userAnswer = getString(promptMessage);
+        int convertedToInteger;
+        try {
+            convertedToInteger = Integer.parseInt(userAnswer);
+            return convertedToInteger;
+        } catch (NumberFormatException e) {
+            System.out.println("Input String cannot be parsed to Integer.");
+        }
+        throw new NumberFormatException(String.format("Could not convert %s to int", userAnswer));
     }
 
 }

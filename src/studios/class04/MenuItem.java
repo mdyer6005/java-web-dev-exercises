@@ -1,8 +1,11 @@
-package studios.class03;
+package studios.class04;
+import exercises.class04.chap05.Student;
+
 import java.text.NumberFormat;
 import java.time.LocalDate;
 
 public class MenuItem {
+    private static int nextItemId = 1;
     private int itemId;
     private String itemName;
     private String description;
@@ -15,7 +18,7 @@ public class MenuItem {
         return itemId;
     }
 
-    public void setItemId(int aItemId) {
+    private void setItemId(int aItemId) {
         this.itemId = aItemId;
     }
 
@@ -70,7 +73,15 @@ public class MenuItem {
 
     public MenuItem (int menuIdNumber, String itemName, String description, String category, double price) {
         this(menuIdNumber,itemName, description, category, price, LocalDate.now());
-        //this(menuIdNumber,itemName, description, category, price, new GregorianCalendar().getTime());
+    }
+
+    public MenuItem (String itemName, String description, String category, double price, LocalDate dateAdded) {
+        this(MenuItem.nextItemId,itemName, description, category, price, dateAdded);
+        incrementNextId();
+    }
+
+    public MenuItem (String itemName, String description, String category, double price) {
+        this(itemName, description, category, price, LocalDate.now());
     }
 
     public String toString() {
@@ -80,6 +91,23 @@ public class MenuItem {
                 this.getDateAdded() + "\n";
     }
 
+    public boolean equals(Object objectToCompare) {
+        if (this == objectToCompare) {
+            return true;
+        } else if (objectToCompare == null) {
+            return false;
+        } else if (!(objectToCompare.getClass() == this.getClass())) {
+            return false;
+        }
+        MenuItem itemToCompare = (MenuItem) objectToCompare;
+        if (this.getItemId() == itemToCompare.getItemId() && this.getItemName().toLowerCase().equals(itemToCompare.getItemName().toLowerCase())){
+            return true;
+        }
+        return false;
+    }
 
+    private static void incrementNextId() {
+        MenuItem.nextItemId ++;
+    }
 
 }
