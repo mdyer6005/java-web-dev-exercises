@@ -1,7 +1,4 @@
 package studios.class05.test;
-import org.junit.Before;
-
-
 import org.junit.Test;
 import studios.class05.main.BalancedBrackets;
 
@@ -24,6 +21,12 @@ public class BalancedBracketsTest {
     @Test
     public void pairOfSameBracketsReturnFalse() {
         assertFalse(BalancedBrackets.hasBalancedBrackets("[["));
+    }
+
+    //Too many of one side should return false
+    @Test
+    public void tooManyLeftBrackets() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[[]"));
     }
 
     //Brackets that could balance, but put in the wrong order, should return false
