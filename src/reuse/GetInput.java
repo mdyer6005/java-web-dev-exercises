@@ -41,9 +41,10 @@ public class GetInput {
             convertedToInteger = Integer.parseInt(userAnswer);
             return convertedToInteger;
         } catch (NumberFormatException e) {
-            System.out.println("Input String cannot be parsed to Integer.");
+            System.out.println(String.format("Could not convert %s to int", userAnswer));
         }
-        throw new NumberFormatException(String.format("Could not convert %s to int", userAnswer));
+        return -1;
+        //throw new NumberFormatException(String.format("Could not convert %s to int", userAnswer));
     }
 
 }
